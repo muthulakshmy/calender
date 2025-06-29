@@ -1,0 +1,316 @@
+[
+    {
+        "id": 1,
+        "summary": "1st Round",
+        "desc": "1st Round",
+        "start": "2024-08-29T18:00:00+05:30",
+        "end": "2024-08-29T18:40:00+05:30",
+        "attendees": null,
+        "status": null,
+        "comment": null,
+        "score": {
+            "P": 8
+        },
+        "link": "http://www.hhh.com",
+        "user_det": {
+            "id": 1,
+            "question_score": null,
+            "status": null,
+            "candidate": {
+                "id": 1,
+                "candidate_firstName": "mohan",
+                "candidate_lastName": "raj",
+                "candidateGender": "male",
+                "candidateComment": "",
+                "candidate_email": "mohanrajk@dataterrain.com"
+            },
+            "handled_by": {
+                "id": 3,
+                "last_login": null,
+                "userEmail": "vinodhini_hr@dataterrain.com",
+                "username": "vinodhini_hr",
+                "firstName": "Vinodhini",
+                "lastName": "HR",
+                "userRole": "hr_employee"
+            },
+            "job_id": {
+                "id": 11,
+                "jobRequest_Title": "django developer",
+                "jobRequest_Role": "software engineer",
+                "jobRequest_KeySkills": "django",
+                "jobRequest_Description": "asfffasf"
+            }
+        },
+        "job_id": {
+            "id": 11,
+            "jobRequest_Title": "django developer",
+            "jobRequest_Role": "software engineer",
+            "jobRequest_KeySkills": "django",
+            "jobRequest_Description": "asfffasf"
+        }
+    },
+    {
+        "id": 2,
+        "summary": "Test",
+        "desc": "Test",
+        "start": "2024-08-29T18:00:00+05:30",
+        "end": "2024-08-29T18:40:00+05:30",
+        "attendees": null,
+        "status": null,
+        "comment": null,
+        "score": {
+            "p": 7
+        },
+        "link": "http://www.hhh.com",
+        "user_det": {
+            "id": 1,
+            "question_score": null,
+            "status": null,
+            "candidate": {
+                "id": 1,
+                "candidate_firstName": "mohan",
+                "candidate_lastName": "raj",
+                "candidateGender": "male",
+                "candidateComment": "",
+                "candidate_email": "mohanrajk@dataterrain.com"
+            },
+            "handled_by": {
+                "id": 3,
+                "last_login": null,
+                "userEmail": "vinodhini_hr@dataterrain.com",
+                "username": "vinodhini_hr",
+                "firstName": "Vinodhini",
+                "lastName": "HR",
+                "userRole": "hr_employee"
+            },
+            "job_id": {
+                "id": 11,
+                "jobRequest_Title": "django developer",
+                "jobRequest_Role": "software engineer",
+                "jobRequest_KeySkills": "django",
+                "jobRequest_Description": "asfffasf"
+            }
+        },
+        "job_id": {
+            "id": 11,
+            "jobRequest_Title": "django developer",
+            "jobRequest_Role": "software engineer",
+            "jobRequest_KeySkills": "django",
+            "jobRequest_Description": "asfffasf"
+        }
+    },
+    {
+        "id": 3,
+        "summary": "2nd Round",
+        "desc": "2nd Round",
+        "start": "2024-08-29T20:00:00+05:30",
+        "end": "2024-08-29T21:00:00+05:30",
+        "attendees": null,
+        "status": null,
+        "comment": null,
+        "score": {
+            "o": 6
+        },
+        "link": "http://www.hhh.com",
+        "user_det": {
+            "id": 1,
+            "question_score": null,
+            "status": null,
+            "candidate": {
+                "id": 1,
+                "candidate_firstName": "mohan",
+                "candidate_lastName": "raj",
+                "candidateGender": "male",
+                "candidateComment": "",
+                "candidate_email": "mohanrajk@dataterrain.com"
+            },
+            "handled_by": {
+                "id": 3,
+                "last_login": null,
+                "userEmail": "vinodhini_hr@dataterrain.com",
+                "username": "vinodhini_hr",
+                "firstName": "Vinodhini",
+                "lastName": "HR",
+                "userRole": "hr_employee"
+            },
+            "job_id": {
+                "id": 11,
+                "jobRequest_Title": "django developer",
+                "jobRequest_Role": "software engineer",
+                "jobRequest_KeySkills": "django",
+                "jobRequest_Description": "asfffasf"
+            }
+        },
+        "job_id": {
+            "id": 11,
+            "jobRequest_Title": "django developer",
+            "jobRequest_Role": "software engineer",
+            "jobRequest_KeySkills": "django",
+            "jobRequest_Description": "asfffasf"
+        }
+    },
+    {
+    "id": 4,
+    "summary": "Final Round",
+    "desc": "Final Round",
+    "start": "2025-06-04T15:00:00+05:30",
+    "end": "2025-06-04T16:00:00+05:30",
+    "score": { "F": 9 },
+    "link": "http://www.hhh.com",
+    "user_det": {
+      "id": 4,
+      "candidate": {
+        "id": 4,
+        "candidate_firstName": "Karthik",
+        "candidate_lastName": "S",
+        "candidateGender": "male",
+        "candidate_email": "karthiks@dataterrain.com"
+      },
+      "handled_by": {
+        "id": 6,
+        "userEmail": "meena_hr@dataterrain.com",
+        "username": "meena_hr",
+        "firstName": "Meena",
+        "lastName": "HR",
+        "userRole": "hr_manager"
+      },
+      "job_id": {
+        "id": 14,
+        "jobRequest_Title": "UI/UX Designer",
+        "jobRequest_Role": "Designer",
+        "jobRequest_KeySkills": "Figma, Adobe XD",
+        "jobRequest_Description": "Design UI/UX screens"
+      }
+    },
+    "job_id": {
+      "id": 14,
+      "jobRequest_Title": "UI/UX Designer",
+      "jobRequest_Role": "Designer",
+      "jobRequest_KeySkills": "Figma, Adobe XD",
+      "jobRequest_Description": "Design UI/UX screens"
+    }
+  },
+  {
+    "id": 5,
+    "summary": "Intro Call",
+    "desc": "Intro Call",
+    "start": "2025-06-11T10:30:00+05:30",
+    "end": "2025-06-11T11:00:00+05:30",
+    "score": { "I": 5 },
+    "link": "http://www.hhh.com",
+    "user_det": {
+      "id": 5,
+      "candidate": {
+        "id": 5,
+        "candidate_firstName": "Divya",
+        "candidate_lastName": "M",
+        "candidateGender": "female",
+        "candidate_email": "divya@dataterrain.com"
+      },
+      "handled_by": {
+        "id": 7,
+        "userEmail": "sankar_hr@dataterrain.com",
+        "username": "sankar_hr",
+        "firstName": "Sankar",
+        "lastName": "HR",
+        "userRole": "hr_employee"
+      },
+      "job_id": {
+        "id": 15,
+        "jobRequest_Title": "QA Tester",
+        "jobRequest_Role": "Test Engineer",
+        "jobRequest_KeySkills": "Selenium",
+        "jobRequest_Description": "Test automation"
+      }
+    },
+    "job_id": {
+      "id": 15,
+      "jobRequest_Title": "QA Tester",
+      "jobRequest_Role": "Test Engineer",
+      "jobRequest_KeySkills": "Selenium",
+      "jobRequest_Description": "Test automation"
+    }
+  },
+  {
+    "id": 6,
+    "summary": "HR Round",
+    "desc": "HR Round",
+    "start": "2025-06-26T13:00:00+05:30",
+    "end": "2025-06-26T13:45:00+05:30",
+    "score": { "H": 7 },
+    "link": "http://www.hhh.com",
+    "user_det": {
+      "id": 6,
+      "candidate": {
+        "id": 6,
+        "candidate_firstName": "Suresh",
+        "candidate_lastName": "Babu",
+        "candidateGender": "male",
+        "candidate_email": "sureshb@dataterrain.com"
+      },
+      "handled_by": {
+        "id": 8,
+        "userEmail": "divya_hr@dataterrain.com",
+        "username": "divya_hr",
+        "firstName": "Divya",
+        "lastName": "HR",
+        "userRole": "hr_employee"
+      },
+      "job_id": {
+        "id": 16,
+        "jobRequest_Title": "DevOps Engineer",
+        "jobRequest_Role": "Infrastructure Engineer",
+        "jobRequest_KeySkills": "Docker, Kubernetes",
+        "jobRequest_Description": "Manage CI/CD and Infra"
+      }
+    },
+    "job_id": {
+      "id": 16,
+      "jobRequest_Title": "DevOps Engineer",
+      "jobRequest_Role": "Infrastructure Engineer",
+      "jobRequest_KeySkills": "Docker, Kubernetes",
+      "jobRequest_Description": "Manage CI/CD and Infra"
+    }
+  },
+  {
+    "id": 7,
+    "summary": "Technical Review",
+    "desc": "Technical Review",
+    "start": "2025-07-14T09:30:00+05:30",
+    "end": "2025-07-14T10:30:00+05:30",
+    "score": { "T": 8 },
+    "link": "http://www.hhh.com",
+    "user_det": {
+      "id": 7,
+      "candidate": {
+        "id": 7,
+        "candidate_firstName": "Lavanya",
+        "candidate_lastName": "S",
+        "candidateGender": "female",
+        "candidate_email": "lavanyas@dataterrain.com"
+      },
+      "handled_by": {
+        "id": 9,
+        "userEmail": "naveen_hr@dataterrain.com",
+        "username": "naveen_hr",
+        "firstName": "Naveen",
+        "lastName": "HR",
+        "userRole": "hr_employee"
+      },
+      "job_id": {
+        "id": 17,
+        "jobRequest_Title": "Cloud Engineer",
+        "jobRequest_Role": "Cloud Specialist",
+        "jobRequest_KeySkills": "AWS, Azure",
+        "jobRequest_Description": "Manage cloud infrastructure"
+      }
+    },
+    "job_id": {
+      "id": 17,
+      "jobRequest_Title": "Cloud Engineer",
+      "jobRequest_Role": "Cloud Specialist",
+      "jobRequest_KeySkills": "AWS, Azure",
+      "jobRequest_Description": "Manage cloud infrastructure"
+    }
+  }
+]
