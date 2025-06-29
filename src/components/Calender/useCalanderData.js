@@ -173,7 +173,7 @@ function formatDateTime(datetimeStr) {
 }
 
 const useCalendarData = () => {
-  const [currentDate, setCurrentDate] = useState(new Date());
+  const [currentDate, setCurrentDate] = useState(new Date("2024-08-29"));
   const [events, setEvents] = useState([]);
   const [selectedDateEvents, setSelectedDateEvents] = useState([]);
   const [selectedEvent, setSelectedEvent] = useState(null);
