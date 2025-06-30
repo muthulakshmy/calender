@@ -1,4 +1,3 @@
-// components/CalendarViews/renderMonthGridView.js
 import React from "react";
 import { Box, Typography, Grid, Paper } from "@mui/material";
 import PropTypes from "prop-types";
@@ -26,6 +25,12 @@ export const renderMonthGridView = (
     current.setDate(current.getDate() + 1);
   }
 
+  const dayCellHeightWithPadding = 25 + 0.5 * 2 * 8;
+
+  const gapSize = 0.5 * 8;
+
+  const minDaysGridHeight = 6 * dayCellHeightWithPadding + 5 * gapSize;
+
   return (
     <Box>
       <Typography variant="subtitle2" textAlign="center" fontWeight={600}>
@@ -37,7 +42,10 @@ export const renderMonthGridView = (
         gridTemplateColumns="repeat(7, 1fr)"
         gap={0.5}
         mt={1}
-        sx={{ fontSize: "0.65rem" }}
+        sx={{
+          fontSize: "0.65rem",
+          minHeight: `${minDaysGridHeight}px`, 
+        }}
       >
         {"SMTWTFS".split("").map((d) => (
           <Box key={d} textAlign="center" color="gray">

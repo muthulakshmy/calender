@@ -3,7 +3,15 @@ import {
   ArrowBackIos,
   ArrowForwardIos,
 } from "@mui/icons-material";
-import { Button, IconButton, Tab, Tabs, Typography } from "@mui/material";
+import {
+  Alert,
+  Button,
+  IconButton,
+  Snackbar,
+  Tab,
+  Tabs,
+  Typography,
+} from "@mui/material";
 import { useMemo, useState } from "react";
 import CreateEvent from "../components/Calender/CreateEvent";
 import { DayView } from "../components/Calender/DayView";
@@ -41,7 +49,11 @@ const CalendarView = () => {
     start: "",
     end: "",
   });
-
+  const [alertInfo, setAlertInfo] = useState({
+    open: false,
+    message: "",
+    severity: "success",
+  });
   const [openCreateDialog, setOpenCreateDialog] = useState(false);
   function roundToNearestSlot(dateObj) {
     const options = { hour: "2-digit", minute: "2-digit", hour12: true };
@@ -70,10 +82,37 @@ const CalendarView = () => {
     return closest;
   }
 
+  const getValidDateString = (input) => {
+    if (!input) return null;
+    if (input.match(/^\d{4}$/)) {
+      return `${input}-01-01T00:00:00`;
+    }
+    return input;
+  };
+
   const handleCreateEvent = () => {
+    const startDateStr = getValidDateString(formData.start);
+    const endDateStr = getValidDateString(formData.end);
+
+    const startDateObj = startDateStr ? new Date(startDateStr) : null;
+    const endDateObj = endDateStr ? new Date(endDateStr) : null;
+
+    if (
+      !startDateObj ||
+      isNaN(startDateObj.getTime()) ||
+      !endDateObj ||
+      isNaN(endDateObj.getTime())
+    ) {
+      setAlertInfo({
+        open: true,
+        message:
+          "Please enter valid start and end dates (e.g., YYYY-MM-DD or YYYY).",
+        severity: "error",
+      });
+      return;
+    }
+
     const newId = events.length + 1;
-    const startDateObj = new Date(formData.start);
-    const endDateObj = new Date(formData.end);
 
     const actualDateStr = startDateObj.toISOString().split("T")[0];
     const actualTimeStr = startDateObj.toLocaleTimeString("en-US", {
@@ -145,10 +184,16 @@ const CalendarView = () => {
         email: newEvent.user_det.candidate.candidate_email,
         position: newEvent.job_id.jobRequest_Role,
         meeting_link: newEvent.link,
+        end: newEvent.end,
       },
     ]);
-
+    console.log(events, "poiuytrewasdftyghuijokpl");
     setOpenCreateDialog(false);
+    setAlertInfo({
+      open: true,
+      message: "Event created successfully!",
+      severity: "success",
+    });
     setFormData({
       candidateName: "",
       email: "",
@@ -202,7 +247,12 @@ const CalendarView = () => {
     else if (view === "year") newDate.setFullYear(newDate.getFullYear() + 1);
     setCurrentDate(new Date(newDate));
   };
-
+  const handleCloseAlert = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    setAlertInfo({ ...alertInfo, open: false });
+  };
   return (
     <div className="p-4 bg-white shadow-md rounded-lg">
       <div className="flex justify-between">
@@ -299,6 +349,20 @@ const CalendarView = () => {
         setFormData={setFormData}
         handleCreateEvent={handleCreateEvent}
       />
+      <Snackbar
+        open={alertInfo.open}
+        autoHideDuration={6000}
+        onClose={handleCloseAlert}
+        anchorOrigin={{ vertical: "top", horizontal: "center" }}
+      >
+        <Alert
+          onClose={handleCloseAlert}
+          severity={alertInfo.severity}
+          sx={{ width: "100%" }}
+        >
+          {alertInfo.message}
+        </Alert>
+      </Snackbar>
     </div>
   );
 };

@@ -164,7 +164,6 @@ function formatDateTime(datetimeStr) {
     hour12: true,
   });
 
-  // Ensure consistent formatting like "06:00 PM"
   const [rawTime, meridian] = time.split(" ");
   const [h, m] = rawTime.split(":");
   const formattedTime = `${h.padStart(2, "0")}:${m} ${meridian}`;
@@ -187,6 +186,7 @@ const useCalendarData = () => {
 
       const transformed = data.map((e) => {
         const { date, time } = formatDateTime(e.start);
+
         return {
           id: e.id,
           date,
@@ -197,6 +197,8 @@ const useCalendarData = () => {
           email: e.user_det.candidate.candidate_email,
           position: e.job_id.jobRequest_Role,
           meeting_link: e.link,
+          end:formatDateTime(e.end)
+
         };
       });
       setEvents(transformed);
@@ -216,21 +218,26 @@ const useCalendarData = () => {
     setSelectedDateEvents(filtered);
   };
 
-  const handleEventClick = (eventId) => {
+
+   const handleEventClick = (eventId) => {
     setLoading(true);
     const event = events.find((e) => e.id === eventId);
     setTimeout(() => {
       setSelectedEvent(event);
       setLoading(false);
+      setEventOpen(false); 
     }, 200);
   };
-
   const closeEventList = () => {
     setEventOpen(false);
     setSelectedDateEvents([]);
   };
 
-  const closeEventDetail = () => setSelectedEvent(null);
+  const closeEventDetail = () => {
+  setSelectedEvent(null);
+  closeEventList(); 
+};
+
 
   return {
     currentDate,

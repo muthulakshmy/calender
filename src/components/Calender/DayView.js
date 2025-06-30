@@ -42,7 +42,7 @@ export const DayView = ({ currentDate, groupedEvents, handleDateClick }) => {
             </div>
 
             {dayEvents?.length > 0 && (
-              <div className="relative inline-block bg-white border-l-8 border-blue-500 rounded-md shadow p-3 max-w-xs">
+              <div className="relative inline-block bg-white border-l-8 border-blue-500 rounded-none shadow p-3 max-w-xs">
                 {dayEvents.length > 1 && (
                   <div className="absolute top-0 right-0 -mt-2 -mr-2 bg-yellow-400 text-white text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center shadow">
                     {dayEvents.length}
@@ -55,7 +55,7 @@ export const DayView = ({ currentDate, groupedEvents, handleDateClick }) => {
                   Interviewer: {dayEvents[0].interviewer}
                 </div>
                 <div className="text-xs text-gray-600">
-                  Time: {dayEvents[0].time}
+                  Time: {dayEvents[0].time} - {dayEvents[0].end.time}
                 </div>
               </div>
             )}
