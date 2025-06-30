@@ -37,7 +37,7 @@ export const WeekView = ({ daysOfWeek, groupedEvents, handleDateClick }) => (
               {dayEvents?.length > 0 && (
                 <div className="relative inline-block bg-white border-x-8 border-blue-500 rounded-none shadow p-3 max-w-xs">
                   {dayEvents.length > 1 && (
-                    <div className="absolute top-0 right-0 -mt-2 -mr-2 bg-yellow-400 text-white text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center shadow cursor-pointer z-10">
+                    <div className="absolute top-0 right-0 -mt-2 -mr-4 bg-yellow-400 text-black text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center shadow cursor-pointer z-10">
                       {dayEvents.length}
                     </div>
                   )}
