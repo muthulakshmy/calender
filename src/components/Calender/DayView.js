@@ -7,14 +7,14 @@ export const DayView = ({ currentDate, groupedEvents, handleDateClick }) => {
   const dateStr = today.toISOString().split("T")[0];
 
  
-  const hourSlotHeight = 70; 
+  const hourSlotHeight = 80; 
 
   const minEventCardContentHeight = 50; 
 
  
   const timeLabelWidth = 70; 
 
-  const eventCardFixedWidth = 300; 
+  const eventCardFixedWidth = 200; 
 
   const eventCardRightMargin = 10; 
 

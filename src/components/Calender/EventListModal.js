@@ -63,7 +63,6 @@ const EventListModal = ({
                     size="small"
                     onClick={(event) => {
                       event.stopPropagation();
-                      console.log("Edit", e.id);
                     }}
                     sx={{ padding: '2px' }}
                   >
