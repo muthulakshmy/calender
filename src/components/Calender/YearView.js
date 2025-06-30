@@ -1,4 +1,3 @@
-import React from "react";
 import { Box, Typography, Grid, Paper } from "@mui/material";
 import PropTypes from "prop-types";
 
@@ -44,7 +43,7 @@ export const renderMonthGridView = (
         mt={1}
         sx={{
           fontSize: "0.65rem",
-          minHeight: `${minDaysGridHeight}px`, 
+          minHeight: `${minDaysGridHeight}px`,
         }}
       >
         {"SMTWTFS".split("").map((d) => (
@@ -58,6 +57,7 @@ export const renderMonthGridView = (
           const dayEvents = groupedEvents[dateStr] || [];
           const isCurrentMonth = date.getMonth() === month;
           const isToday = dateStr === new Date().toISOString().split("T")[0];
+          const hasEvents = dayEvents.length > 0; 
 
           return (
             <Box
@@ -65,7 +65,13 @@ export const renderMonthGridView = (
               p={0.5}
               height={25}
               bgcolor={
-                isToday ? "#e0f7fa" : isCurrentMonth ? "white" : "#f5f5f5"
+                isToday
+                  ? "#e0f7fa"
+                  : hasEvents
+                  ? "#bbdefb"
+                  : isCurrentMonth
+                  ? "white"
+                  : "#f5f5f5"
               }
               borderRadius={1}
               overflow="hidden"
@@ -75,18 +81,6 @@ export const renderMonthGridView = (
               <Box fontWeight={600} fontSize="0.75rem">
                 {date.getDate()}
               </Box>
-
-              {dayEvents.length > 0 && (
-                <Box
-                  width={6}
-                  height={6}
-                  borderRadius="50%"
-                  bgcolor="#1976d2"
-                  position="absolute"
-                  top={2}
-                  right={2}
-                />
-              )}
             </Box>
           );
         })}
@@ -119,7 +113,7 @@ export const YearView = ({ currentDate, events, handleDateClick }) => {
 };
 
 YearView.propTypes = {
-  currentDate: PropTypes.string.isRequired,
+  currentDate: PropTypes.instanceOf(Date).isRequired, 
   events: PropTypes.array.isRequired,
   handleDateClick: PropTypes.func.isRequired,
 };
