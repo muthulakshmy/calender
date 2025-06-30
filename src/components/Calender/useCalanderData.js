@@ -210,24 +210,58 @@ const useCalendarData = () => {
     fetchEvents();
   }, []);
 
-  const handleDateClick = (dateStr, timeStr = null) => {
-    setEventOpen(true);
-    const filtered = events.filter((e) =>
+  // const handleDateClick = (dateStr, timeStr = null) => {
+  //   setEventOpen(true);
+  //   const filtered = events.filter((e) =>
+  //     timeStr ? e.date === dateStr && e.time === timeStr : e.date === dateStr
+  //   );
+  //   setSelectedDateEvents(filtered);
+  // };
+
+
+  //  const handleEventClick = (eventId) => {
+  //   setLoading(true);
+  //   const event = events.find((e) => e.id === eventId);
+  //   setTimeout(() => {
+  //     setSelectedEvent(event);
+  //     setLoading(false);
+  //     setEventOpen(false); 
+  //   }, 200);
+  // };
+ 
+
+   const handleDateClick = (dateStr, timeStr = null) => {
+    const filteredEvents = events.filter((e) =>
       timeStr ? e.date === dateStr && e.time === timeStr : e.date === dateStr
     );
-    setSelectedDateEvents(filtered);
+
+    if (filteredEvents.length === 1) {
+      // If there's only one event, open EventDetailModal directly
+      handleEventClick(filteredEvents[0].id);
+    } else if (filteredEvents.length > 1) {
+      // If there are multiple events, open EventListModal
+      setSelectedDateEvents(filteredEvents);
+      setEventOpen(true);
+    } else {
+      // No events for the clicked slot, you might want to do nothing or show a message
+      setSelectedDateEvents([]);
+      setEventOpen(false); // Ensure EventListModal is closed if no events
+    }
   };
 
-
-   const handleEventClick = (eventId) => {
+  const handleEventClick = (eventId) => {
     setLoading(true);
     const event = events.find((e) => e.id === eventId);
     setTimeout(() => {
       setSelectedEvent(event);
       setLoading(false);
-      setEventOpen(false); 
+      setEventOpen(false); // Close EventListModal if it was open
     }, 200);
   };
+ 
+ 
+ 
+ 
   const closeEventList = () => {
     setEventOpen(false);
     setSelectedDateEvents([]);
