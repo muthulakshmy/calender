@@ -21,7 +21,7 @@ import { MonthView } from "../components/Calender/MonthView";
 import useCalendarData from "../components/Calender/useCalanderData";
 import { WeekView } from "../components/Calender/WeekView";
 import { YearView } from "../components/Calender/YearView";
-import { timeSlots } from "../utils.js/TimeSlots";
+import { timeSlots } from "../utils/TimeSlots";
 
 const CalendarView = () => {
   const [view, setView] = useState("week");

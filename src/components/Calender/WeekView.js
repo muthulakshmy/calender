@@ -1,4 +1,4 @@
-import { timeSlots } from "../../utils.js/TimeSlots";
+import { timeSlots } from "../../utils/TimeSlots";
 import PropTypes from "prop-types";
 
 export const WeekView = ({ daysOfWeek, groupedEvents, handleDateClick }) => {
